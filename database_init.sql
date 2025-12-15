@@ -4,6 +4,7 @@
 -- 时间：2025-12-14
 
 -- 1. 创建数据库
+SET NAMES utf8mb4;
 DROP DATABASE IF EXISTS equipmentloansystem;
 CREATE DATABASE equipmentloansystem CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE equipmentloansystem;
@@ -204,11 +205,11 @@ INSERT INTO users (full_name, password, employee_student_id, phone_number, email
 
 -- 黑名单用户（5个）
 INSERT INTO users (full_name, password, employee_student_id, phone_number, email, department, user_type, is_blacklisted) VALUES
-('马逾期', 'e10adc3949ba59abbe56e057f20f883e', 'S2023021', '13800138030', 'mayuqi@edu.cn', '璁＄畻鏈虹瀛︿笌鎶€鏈闄?', '瀛︾敓', TRUE),
-('鏉ㄥけ淇?, 'e10adc3949ba59abbe56e057f20f883e', 'S2023022', '13800138031', 'yangshixin@edu.cn', '杞欢宸ョ▼瀛﹂櫌', '瀛︾敓', TRUE),
-('寮犳崯鍧?, 'e10adc3949ba59abbe56e057f20f883e', 'S2023023', '13800138032', 'zhangsunhuai@edu.cn', '浜哄伐鏅鸿兘瀛﹂櫌', '瀛︾敓', TRUE),
-('鐜嬭繚瑙?, 'e10adc3949ba59abbe56e057f20f883e', 'S2023024', '13800138033', 'wangweigui@edu.cn', '鏁版嵁绉戝瀛﹂櫌', '瀛︾敓', TRUE),
-('鏉庡け绾?, 'e10adc3949ba59abbe56e057f20f883e', 'S2023025', '13800138034', 'lishiyue@edu.cn', '缃戠粶绌洪棿瀹夊叏瀛﹂櫌', '瀛︾敓', TRUE);
+('马逾期', 'e10adc3949ba59abbe56e057f20f883e', 'S2023021', '13800138030', 'mayuqi@edu.cn', '计算机科学与技术学院', '学生', TRUE),
+('杨失信', 'e10adc3949ba59abbe56e057f20f883e', 'S2023022', '13800138031', 'yangshixin@edu.cn', '软件工程学院', '学生', TRUE),
+('张损坏', 'e10adc3949ba59abbe56e057f20f883e', 'S2023023', '13800138032', 'zhangsunhuai@edu.cn', '人工智能学院', '学生', TRUE),
+('王违规', 'e10adc3949ba59abbe56e057f20f883e', 'S2023024', '13800138033', 'wangweigui@edu.cn', '数据科学学院', '学生', TRUE),
+('李失约', 'e10adc3949ba59abbe56e057f20f883e', 'S2023025', '13800138034', 'lishiyue@edu.cn', '网络空间安全学院', '学生', TRUE);
 -- 一键初始化设备借用系统数据库脚本 (Part 2 - 设备数据)
 
 -- 3.3 插入设备数据（80台设备）
@@ -387,7 +388,7 @@ INSERT INTO borrow_records (user_id, equipment_id, reservation_id, actual_borrow
 (4, 7, NULL, '2025-12-04 09:00:00', '2025-12-07 09:00:00', '2025-12-06 15:10:00', '已归还', 2, 4, '正常归还'),
 (5, 9, NULL, '2025-12-05 10:30:00', '2025-12-08 10:30:00', '2025-12-07 13:40:00', '已归还', 3, 5, '正常归还'),
 (6, 11, NULL, '2025-12-06 14:15:00', '2025-12-09 14:15:00', '2025-12-08 16:20:00', '已归还', 3, 1, '正常归还'),
-(7, 13, NULL, '2025-12-07 09:00:00', '2025-12-10 09:00:00', '2025-12-09 14:50:00', '已归还', 4, 2, '正常归還'),
+(7, 13, NULL, '2025-12-07 09:00:00', '2025-12-10 09:00:00', '2025-12-09 14:50:00', '已归还', 4, 2, '正常归还'),
 (8, 15, NULL, '2025-12-08 10:30:00', '2025-12-11 10:30:00', '2025-12-10 11:30:00', '已归还', 4, 3, '正常归还'),
 (9, 17, NULL, '2025-12-09 14:15:00', '2025-12-12 14:15:00', '2025-12-11 17:00:00', '已归还', 5, 4, '正常归还'),
 (10, 19, NULL, '2025-12-10 09:00:00', '2025-12-13 09:00:00', '2025-12-12 15:45:00', '已归还', 5, 5, '正常归还'),
